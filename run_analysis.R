@@ -63,3 +63,7 @@ widetidyData <- dcast(meltedData, subject_id + activity ~ variable, mean)
 
 # This is the tall tidy format
 talltidyData <- melt(widetidyData, id.vars = c("subject_id","activity"))
+
+# Output text files with tidy data
+write.table(talltidyData, "talltidyData.txt", row.names = FALSE)
+write.table(widetidyData, "widetidyData.txt", row.names = FALSE)
